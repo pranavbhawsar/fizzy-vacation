@@ -4,7 +4,7 @@
 
   Fizzy Vacation is fully responsive travel website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
-  <a href="https://pranavbhawsar.github.io/fizzy/"><strong>➥ Live Demo</strong></a>
+  <a href="https://pranavbhawsar.github.io/fizzy-vacation/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
