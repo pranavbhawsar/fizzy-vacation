@@ -270,7 +270,8 @@ body {
 }
 
 .header-top .logo img {
-  max-width: 100px;
+  max-width: 65px;
+  /* max-width: 100px; */
 }
 
 .header-btn-group {
@@ -772,9 +773,9 @@ textarea.input-field {
   margin-bottom: 30px;
 }
 
-.footer-brand img {
+/* .footer-brand img {
   width: 180px;
-}
+} */
 
 .footer-brand .logo {
   margin-bottom: 20px;
