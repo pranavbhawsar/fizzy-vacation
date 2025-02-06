@@ -66,10 +66,8 @@ $(document).ready(function () {
     }
   });
 
-  // Book Now Modal Popup Start
-
   // Get the modal
-  var modal = $("#modalDialog");
+  /*var modal = $("#modalDialog");
 
   // Get the button that opens the modal
   var btn = $(".mbtn");
@@ -92,9 +90,22 @@ $(document).ready(function () {
     if ($(e.target).hasClass("modal")) {
       modal.fadeOut();
     }
-  });
+  });*/
 
-  // Book Now Modal Popup End
+  $(".open-modal").click(function () {
+    var title = $(this).data("title");
+    var message = $(this).data("message");
+
+    $("#modal-title").text(title);
+    $("#modal-message").text(message);
+    $("#myModal").fadeIn();
+});
+
+$(".close, .modal").click(function (event) {
+    if (event.target === this) {
+        $("#myModal").fadeOut();
+    }
+});
 
   //Footer Subscriber Form start
 
@@ -115,7 +126,7 @@ $(document).ready(function () {
       $(".ajax-loader", form).addClass("is-active");
 
       $.ajax({
-        url: "sendmail.php",
+        url: "subscribe.php",
         type: "POST",
         data: $(form).serialize(),
         success: function (response) {
@@ -204,34 +215,6 @@ $(document).ready(function () {
   $('a[href*="#"]').on("click", function (e) {
     e.preventDefault();
   });
-
-  // navbar scroll active section navlink color change js start
-  $(window).on('scroll', function() {
-    var scrollPosition = $(window).scrollTop();
-    
-    // Loop through each section to check its position
-    $('section').each(function() {
-      var sectionTop = $(this).offset().top - 200; // Offset to trigger before section is fully in view
-      var sectionBottom = sectionTop + $(this).outerHeight();
-      
-      // If the scroll position is within the section
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        var currentId = $(this).attr('id');
-        
-        // Remove active class from all nav links
-        $('.nav-link').removeClass('active');
-        
-        // Add active class to the current section link only if it's visible
-        $('a[href="#' + currentId + '"]').addClass('active');
-      } else {
-        // Remove active class from navbar links once section is out of view
-        var currentId = $(this).attr('id');
-        $('a[href="#' + currentId + '"]').removeClass('active');
-      }
-    });
-  });
-  // navbar scroll active section navlink color change js end
-
 }); //Ready functions end
 
 // navbar scroll js start

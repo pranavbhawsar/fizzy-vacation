@@ -384,8 +384,14 @@ body {
   text-transform: capitalize;
 }
 
-.navbar-link:is(:hover, :focus) {
+.navbar-link:is(:hover) {
   color: var(--bright-navy-blue);
+  transition: var(--transition);
+}
+
+.header.active .navbar-link.active {
+  color: var(--bright-navy-blue);
+  transition: var(--transition);
 }
 
 .overlay {
@@ -401,6 +407,10 @@ body {
 .overlay.active {
   opacity: 0.7;
   pointer-events: all;
+}
+
+.spacer {
+  height: 10px;
 }
 
 /*-----------------------------------*\
@@ -1327,7 +1337,7 @@ address {
     color: var(--onyx);
   }
 
-  .header.active .navbar-link:is(:hover, :focus) {
+  .header.active .navbar-link:is(:hover) {
     color: var(--bright-navy-blue);
   }
 
@@ -1338,6 +1348,10 @@ address {
 
   .overlay {
     display: none;
+  }
+
+  .spacer {
+    height: 15px;
   }
 
   /**
